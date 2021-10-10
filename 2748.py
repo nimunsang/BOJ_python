@@ -8,5 +8,3 @@ while True:
     if i == n: 
         print(fibo[n])
         break
-
-print(fibo)
