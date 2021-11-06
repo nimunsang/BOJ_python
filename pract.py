@@ -1,40 +1,25 @@
-stack = [1, 2, 3, 4, 5, 6, 7, 8] #제일 아래에 1이라고 가정
-lst = [4, 3, 6, 8, 7, 5, 2, 1]
-8
-7
-6
-5
-4
-3
-2
-1
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10000)
+
+N, M = map(int, input().split())
+graph = [[0] * (N+1) for _ in range(N+1)]
+visited = [0] * (N+1)
+for i in range(M):
+    a, b = map(int, input().split())
+    graph[a][b] = graph[b][a] = 1
+
+def dfs(v):
+    visited[v] = 1
+    for i in range(1, N+1):
+        if graph[i][v] == 1 and visited[i] == 0:
+            visited[i] = 1
+            dfs(i)
+
 cnt = 0
-
-for i in range(n):
-
-    while stack[0] != lst[-1]:
+for i in range(1, N+1):
+    if visited[i] == 0:
+        dfs(i)
         cnt += 1
-        push
-        """
-        push_stack.append(stack.popleft())
-        """
 
-
-    pop * cnt
-    """
-    stack.append(push_stack.pop())"""
-    push
-
-
-pop_lst = []
-
-
-4, 3, 6
-
-
-
-8
-7
-5
-2
-1
+print(cnt)
