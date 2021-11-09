@@ -1,25 +1,23 @@
-import sys
-input = sys.stdin.readline
-sys.setrecursionlimit(10000)
+def dfs(depth, v):
+    if depth == 6:
+        print(*lst)
+    else:
+        for i in range(v, length):
+            if not visited[i]:
+                lst[depth] = s[i]
+                visited[i] = 1
+                dfs(depth+1, i+1)
+                visited[i] = 0
 
-N, M = map(int, input().split())
-graph = [[0] * (N+1) for _ in range(N+1)]
-visited = [0] * (N+1)
-for i in range(M):
-    a, b = map(int, input().split())
-    graph[a][b] = graph[b][a] = 1
 
-def dfs(v):
-    visited[v] = 1
-    for i in range(1, N+1):
-        if graph[i][v] == 1 and visited[i] == 0:
-            visited[i] = 1
-            dfs(i)
-
-cnt = 0
-for i in range(1, N+1):
-    if visited[i] == 0:
-        dfs(i)
-        cnt += 1
-
-print(cnt)
+while True:
+    s = input()
+    if s == '0':
+        break
+    else:
+        length = int(s[0])
+        visited = [0] * (length)
+        s = list(map(int, s.split()))[1:]
+        lst = [0] * 6
+        dfs(0, 0)
+        print()
