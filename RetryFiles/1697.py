@@ -5,22 +5,22 @@ https://www.acmicpc.net/problem/1697
 """
 
 from collections import deque
-
 N, K = map(int, input().split())
+
 visited = [0] * 100001
 
-def bfs():
-    deq = deque()
-    deq.append(N)
-    while deq:
-        d = deq.popleft()
-        if d == K:
+def bfs(v):
+    q = deque([v])
+    while q:
+        v = q.popleft()
+        if v == K:
             print(visited[K])
             break
 
-        for dn in (d-1, d+1, d*2):
-            if 0<=dn<=100000 and visited[dn] == 0:
-                visited[dn] = visited[d] + 1
-                deq.append(dn)
+        for i in (v-1, v+1, v*2):
+            if 0<=i<=100000 and visited[i] == 0:
+                q.append(i)
+                visited[i] = visited[v] + 1
 
-bfs()
+        
+bfs(N)
