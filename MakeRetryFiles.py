@@ -4,7 +4,7 @@ import os
 import shutil
 
 origin = 'C:/Users/samsung/Desktop/myPython'
-copy = 'C:/Users/samsung/Desktop/retry'
+copy = 'C:/Users/samsung/Desktop/myPython/RetryFiles'
 files = os.listdir(origin)
 baekjoonfiles = []
 for i in range(len(files)):
@@ -21,4 +21,3 @@ for baekjoon in baekjoonfiles:
         if '#다시' in l:
             shutil.copy(filepath, copy + '/' + file)
         f.close()
-
