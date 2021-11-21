@@ -1,4 +1,4 @@
-#다시 #백트래킹
+#해결 #백트래킹
 """
 https://www.acmicpc.net/problem/15649
 [15649] : N과 M(1)
@@ -34,7 +34,38 @@ dfs()
 # for i in p:
 #     print(' '.join(map(str, i)))
 
+"""
+내가 나중에 다시 푼 풀이
 
+N, M = map(int, input().split())
 
+visited = [0] * (N+1)
+lst = []
+def solve(n , depth):
+    global visited
+    if depth == M:
+        print(*lst)
+        return
 
+    for i in range(1, n+1):
+        if visited[i] == 0:
+            lst.append(i)
+            visited[i] = 1
+            depth += 1
+            solve(n, depth)
 
+            depth -= 1
+            visited[i] = 0
+            lst.pop()
+
+solve(N, 0)
+"""
+"""
+from itertools import permutations
+
+N, M = map(int, input().split())
+p = permutations(range(1, N+1), M)
+
+for i in p:
+    print(*i)
+"""
