@@ -1,5 +1,9 @@
-total = list(range(1, 9))
-lst = [1, 2, 3, 4]
-rest_lst = list(set(total) - set(lst))
+from collections import deque
 
-print(rest_lst)
+l = deque(range(65, 97))
+print(l)
+l.rotate(1)
+print(l)
+# lst1 = range(ord('a'), ord('b'))
+s = "abCD"
+s.
