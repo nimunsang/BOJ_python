@@ -1,5 +1,10 @@
-total = list(range(1, 9))
-lst = [1, 2, 3, 4]
-rest_lst = list(set(total) - set(lst))
+from collections import Counter
 
-print(rest_lst)
+N = 5
+stages = [2, 1, 2, 6, 2, 4, 3, 3]
+c = dict(Counter(stages))
+print(c)
+
+for a in sorted(c.items()):
+    
+print(sorted(c.items()))
