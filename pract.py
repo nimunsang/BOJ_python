@@ -1,2 +1,3 @@
-for i in range(4, 1, -1):
-    print(i)
+
+lst = [1, 2,3 ,4]
+print(lst[-5])
