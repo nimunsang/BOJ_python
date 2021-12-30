@@ -1,1 +1,3 @@
-print(-5%4)
+from math import *
+
+print(prod([3]))
