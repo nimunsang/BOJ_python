@@ -1,4 +1,4 @@
-#다시 #그래프이론 #그래프탐색 #BFS
+#해결 #그래프이론 #그래프탐색 #BFS
 """
 https://www.acmicpc.net/problem/1697
 [1697] : 숨바꼭질
