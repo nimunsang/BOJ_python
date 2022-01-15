@@ -1,43 +1,22 @@
-from itertools import combinations
+#다시 #다이나믹프로그래밍
+"""
+https://www.acmicpc.net/problem/2565
+[2565] : 전깃줄
+"""
+
 N = int(input())
-arr = []
+arr = [list(map(int, input().split())) for _ in range(N)]
+arr.sort(key = lambda x: x[0])
+arr = list(map(lambda x: x[1], arr))
+
+print(arr)
+dp = [0] * (N)
 for i in range(N):
-    a, b = map(int, input().split())
-    arr.append([a, b])
-arr.sort()
-lst = []  
-for i in range(N):
-    lst.append(arr[i][1])
-print(lst)
-dp = [0]*(N)
-
-def descending(arr):
-    for i in range(1, len(arr)):
-        if arr[i-1] < arr[i]:
-            return False
-    return True
-
-
-while True:
-    dp = []
-    for i in range(len(arr)):
-        cnt = 0
-        for j in range(i+1, len(arr)):
-            if arr[i]<arr[j]:
-                cnt += 1
-        dp.append(cnt)
-
-    i = 1
-    while True:
-        try:
-            if dp[i] > dp[i-1]:
-                dp.pop(i)
-            i += 1
-        except:
-            break
+    for j in range(i):
+        if arr[i] > arr[j] and dp[i] < dp[j]:
+            dp[i] = dp[j]
     
-    print(dp)
-    if descending(dp):
-        break
+    dp[i] += 1
 
 print(dp)
+print(N-max(dp))
