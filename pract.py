@@ -1,13 +1,28 @@
-from collections import deque
+arr = []
 
-prices = [1, 2,3 , 2, 3]
-answer = deque([])
-answer.append(0)
-time = 0
-while len(prices) != 1:
-    p = prices.pop()
-    if p < prices[-1]:
-        answer.appendleft(time)
-    time += 1
-    
-print(answer)
+def star(num) :
+    global arr
+
+    if num > 1 : 
+        star(num//3)
+
+    for i in range(len(arr)) :
+        for j in range(len(arr)) :
+           if i//num%3==1 and j//num%3==1 :
+               arr[i][j] = " "
+
+
+num = int(input())
+
+str = []
+for i in range(num) :
+    str.append("*")
+for i in range(num) :
+    arr.append(str)
+
+star(num//3)
+
+for i in range(num) :
+    for j in range(num) :
+        print("%c" % (arr[i][j]), end = "")
+    print()
