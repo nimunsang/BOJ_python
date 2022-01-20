@@ -1,4 +1,4 @@
-#다시 #그래프이론 #그래프탐색 #BFS
+#해결 #그래프이론 #그래프탐색 #BFS
 """
 https://www.acmicpc.net/problem/2178
 [2178] : 미로 탐색
