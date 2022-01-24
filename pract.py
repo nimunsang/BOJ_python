@@ -1,1 +1,2 @@
-print(-1%7)
+lst = "abcdsafnasabc"
+lst.translate()
