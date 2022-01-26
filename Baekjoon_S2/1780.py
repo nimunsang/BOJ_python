@@ -1,4 +1,4 @@
-#다시 #분할정복 #재귀
+#해결 #분할정복 #재귀
 """
 https://www.acmicpc.net/problem/1780
 [1780] : 종이의 개수
@@ -7,31 +7,26 @@ https://www.acmicpc.net/problem/1780
 import sys
 input = sys.stdin.readline
 
-def cut(a, b, n):
-    mask = lst[a][b]
-    for i in range(a, a+n):
-        for j in range(b, b+n):
-            if lst[i][j] != mask:
-                for k in range(3):
-                    for l in range(3):
-                        cut(a + k * n//3, b + l * n//3, n//3)
-                return
-
-    if mask == -1:
-        count[0] += 1
-    elif mask == 0:
-        count[1] += 1 
-    else:
-        count[2] += 1
-
-
 N = int(input())
-lst = []
-for i in range(N):
-    lst.append(list(map(int, input().split())))
+arr = [list(map(int, input().split())) for _ in range(N)]
+ans = {-1: 0, 0: 0, 1: 0}
 
-count = [0, 0, 0]
+def check(y, x, n):
+    for i in range(y, y+n):
+        for j in range(x, x+n):
+            if arr[i][j] != arr[y][x]:
+                return False
+    return True
+
+def cut(y, x, n):
+    if check(y, x, n):
+        ans[arr[y][x]] += 1
+        return
+
+    for i in range(y, y+n, n//3):
+        for j in range(x, x+n, n//3):
+            cut(i, j, n//3)
+                
 cut(0, 0, N)
-
-for i in count:
-    print(i)
+for value in ans.values():
+    print(value)

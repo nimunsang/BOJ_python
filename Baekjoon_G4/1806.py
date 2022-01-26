@@ -1,4 +1,4 @@
-#다시 #두포인터
+#해결 #두포인터
 """
 https://www.acmicpc.net/problem/1806
 [1806] : 부분합

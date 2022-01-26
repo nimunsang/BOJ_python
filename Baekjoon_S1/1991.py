@@ -1,4 +1,4 @@
-#다시 #트리 #재귀
+#해결 #트리 #재귀
 """
 https://www.acmicpc.net/problem/1991
 [1991] : 트리 순회
