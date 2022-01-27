@@ -1,4 +1,4 @@
-#다시 #그래프이론 #DFS #BFS
+#해결 #그래프이론 #DFS #BFS
 """
 https://www.acmicpc.net/problem/11724
 [11724] : 연결 요소의 개수

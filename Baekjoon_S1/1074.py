@@ -1,4 +1,4 @@
-#다시 #분할정복 #재귀
+#해결 #분할정복 #재귀
 """
 https://www.acmicpc.net/problem/1074
 [1074] : Z

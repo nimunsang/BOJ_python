@@ -1,4 +1,4 @@
-#다시 #다이나믹프로그래밍
+#해결 #다이나믹프로그래밍
 """
 https://www.acmicpc.net/problem/1149
 [1149] RGB거리
