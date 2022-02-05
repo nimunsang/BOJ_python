@@ -1,4 +1,4 @@
-#다시 #백트래킹
+#해결 #백트래킹
 """
 https://www.acmicpc.net/problem/2580
 [2580] : 스도쿠
