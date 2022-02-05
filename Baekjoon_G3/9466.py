@@ -6,31 +6,33 @@ https://www.acmicpc.net/problem/9466
 
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**5)
 
-T = int(input())
-
-def dfs(start):
-    global result
-    visited[start] = 1
+def solve(start):
+    global answer
     lst.append(start)
+    visited[start] = 1
     next = arr[start]
 
     if visited[next]:
         if next in lst:
-            result += lst[lst.index(next):]
+            startind = lst.index(next)
+            answer += lst[startind:]
         return
+    
     else:
-        dfs(next)
+        solve(next)
+        
 
-
+T = int(input())
 for _ in range(T):
-    n = int(input())
+    N = int(input())
     arr = [0] + list(map(int, input().split()))
-    visited = [0] * (n+1)
-    result = []
-    for i in range(1, n+1):
+    visited = [0] * (N+1)
+    answer = []
+    
+    for i in range(1, N+1):
         if not visited[i]:
             lst = []
-            dfs(i)
-    print(n - len(result))
+            solve(i)
+    print(N - len(answer))
