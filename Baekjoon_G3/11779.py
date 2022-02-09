@@ -1,49 +1,42 @@
-#다시 #그래프이론 #다익스트라
+#1시간 #그래프이론 #다익스트라
 """
 https://www.acmicpc.net/problem/11779
-[11779] : 최소비용구하기2
+[11779] : 최소비용 구하기 2
 """
 
 import heapq
 import sys
-from collections import deque
 input = sys.stdin.readline
 
-n = int(input())
-m = int(input())
-graph = [[] for _ in range(n+1)]
-for _ in range(m):
+N = int(input())
+M = int(input())
+graph = [[] for _ in range(N+1)]
+for _ in range(M):
     s, e, c = map(int, input().split())
     graph[s].append((c, e))
-start, end = map(int, input().split())
+START, END = map(int, input().split())
+minpath = [[] for _ in range(N+1)]
 
-way = [[] for _ in range(n+1)]
-way[start].append(start)
-
-def dijkstra(start):
-    distance = [float('inf')] * (n+1)
-    distance[start] = 0
+def dijkstra(s):
+    distance = [float('inf')] * (N+1)
+    distance[s] = 0
     heap = []
-    heap.append((distance[start], start))
+    heap.append((distance[s], s, [s]))
     while heap:
-        dist, node = heapq.heappop(heap)
-        if distance[node] < dist:
+        dist, node, path = heapq.heappop(heap)
+        if dist > distance[node]:
             continue
-
+            
         for next_dist, adj in graph[node]:
-            next_weight = dist + next_dist
-            if next_weight < distance[adj]:
-                distance[adj] = next_weight
-                heapq.heappush(heap, (next_weight, adj))
-                
-                way[adj] = []
-                for w in way[node]:
-                    way[adj].append(w)
-                way[adj].append(adj)
+            next_cost = dist + next_dist
+            if next_cost < distance[adj]:
+                distance[adj] = next_cost
+                minpath[adj] = path + [adj]
+                heapq.heappush(heap, (next_cost, adj, path + [adj]))
     
     return distance
 
-distance = dijkstra(start)
-print(distance)
-for w in way:
-    print(w)
+distance = dijkstra(START)
+print(distance[END])
+print(len(minpath[END]))
+print(*minpath[END])
