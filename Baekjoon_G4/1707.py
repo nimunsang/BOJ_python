@@ -1,4 +1,4 @@
-#다시 #그래프이론 #그래프탐색 #BFS #DFS
+#해결 #그래프이론 #그래프탐색 #BFS #DFS
 """
 https://www.acmicpc.net/problem/1707
 [1707] : 이분 그래프
