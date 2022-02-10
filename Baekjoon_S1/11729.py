@@ -1,4 +1,4 @@
-#다시 #재귀
+#해결 #재귀
 """
 https://www.acmicpc.net/problem/11729
 [11729] : 하노이 탑 이동 순서
