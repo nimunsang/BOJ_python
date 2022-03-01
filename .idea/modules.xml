@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/BOJ_python.iml" filepath="$PROJECT_DIR$/.idea/BOJ_python.iml" />
       <module fileurl="file://$PROJECT_DIR$/../.idea/PycharmProjects.iml" filepath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/PythonProjects.iml" filepath="$PROJECT_DIR$/.idea/PythonProjects.iml" />
+>>>>>>> 39778effc14db2f5976f87b8b46c2ec3c8eb526a
     </modules>
   </component>
 </project>
