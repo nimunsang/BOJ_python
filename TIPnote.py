@@ -12,5 +12,9 @@ for a in arr:
 
 #  함수에 list를 인자로 넣을 경우, 시간 초과가 발생할 수 있다. (ex) BOJ[9466] : 텀 프로젝트
 
+#  git에 staging된 것들을 되돌리고 싶다면 -> git reset HEAD
+
+
+
 
 
